@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
    typedef struct ConditionCodes {    
     uint8_t  z:1;    
@@ -43,5 +44,9 @@ int emulate(State *state) {
             break;
         default: unimplemented(state); break;
     }
-    state->pc+=1
+    state->pc+=1;
+}
+
+int main() {
+    return 0;
 }
