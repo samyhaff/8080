@@ -265,7 +265,6 @@ int main (int argc, char**argv) {
         exit(1);    
     }    
 
-    //Get the file size and read it into a memory buffer    
     fseek(f, 0L, SEEK_END);    
     int fsize = ftell(f);    
     fseek(f, 0L, SEEK_SET);    
@@ -275,10 +274,7 @@ int main (int argc, char**argv) {
     fread(buffer, fsize, 1, f);    
     fclose(f);    
 
-    // for (int i = 0; i < fsize; i++)
-    //     printf("%d\n", buffer[i]); 
-
-    int pc = 0; // program counter
+    int pc = 0;
 
     while (pc < fsize) {
         pc += disassemble(buffer, pc);
